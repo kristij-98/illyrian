@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
-import { ProductTile } from '../components/ProductTile';
 import { getCollectionByHandle, getProductsForCollection } from '../lib/data';
+import { ProductTile } from '../components/ProductTile';
 
 export function CollectionPage() {
   const { handle = '' } = useParams();

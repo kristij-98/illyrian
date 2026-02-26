@@ -59,6 +59,9 @@ export function ProductTile({ product, large = false }: { product: Product; larg
   const imageHeight = large
     ? 'h-[42rem] md:h-[52rem]'
     : 'h-[36rem] md:h-[32rem] lg:h-[36rem]';
+export function ProductTile({ product, large = false }: { product: Product; large?: boolean }) {
+  const reduce = useReducedMotion();
+  const [active, setActive] = useState(false);
 
   return (
     <Link

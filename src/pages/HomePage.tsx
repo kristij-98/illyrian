@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import { EditorialTile } from '../components/EditorialTile';
-import { ProductTile } from '../components/ProductTile';
 import { getEditorialImage, getHomepagePicks } from '../lib/data';
 import { motionTokens } from '../motion/tokens';
+import { EditorialTile } from '../components/EditorialTile';
+import { ProductTile } from '../components/ProductTile';
 
 export function HomePage() {
   const products = getHomepagePicks(72);
@@ -10,7 +10,7 @@ export function HomePage() {
   let cursor = 0;
 
   return (
-    <main>
+    <main className="border-b border-hairline">
       {blocks.map((blockIdx) => (
         <section key={blockIdx}>
           {[0, 1, 2].map((rowIdx) => (
@@ -25,7 +25,6 @@ export function HomePage() {
                 <EditorialTile src={getEditorialImage(blockIdx * 6 + rowIdx * 2)} />
                 <EditorialTile src={getEditorialImage(blockIdx * 6 + rowIdx * 2 + 1)} />
               </motion.div>
-
               <motion.div
                 initial={{ opacity: 0, y: motionTokens.distances.md }}
                 whileInView={{ opacity: 1, y: 0 }}
