@@ -1,0 +1,29 @@
+{
+  "generatedAt": "1970-01-01T00:00:00.000Z",
+  "collections": [
+    {
+      "handle": "new-arrivals",
+      "title": "New Arrivals",
+      "url": "https://illyrianbloodline.com/en-al/collections/new-arrivals",
+      "productHandles": []
+    },
+    {
+      "handle": "mens-wear",
+      "title": "Mens Wear",
+      "url": "https://illyrianbloodline.com/en-al/collections/mens-wear",
+      "productHandles": []
+    },
+    {
+      "handle": "womens-wear",
+      "title": "Womens Wear",
+      "url": "https://illyrianbloodline.com/en-al/collections/womens-wear",
+      "productHandles": []
+    },
+    {
+      "handle": "see-all",
+      "title": "See All",
+      "url": "https://illyrianbloodline.com/en-al/collections/see-all",
+      "productHandles": []
+    }
+  ]
+}
