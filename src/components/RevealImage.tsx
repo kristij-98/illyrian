@@ -2,7 +2,17 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { useState } from 'react';
 import { motionTokens } from '../motion/tokens';
 
-export function RevealImage({ src, alt, className }: { src?: string; alt: string; className?: string }) {
+export function RevealImage({
+  src,
+  alt,
+  className,
+  fit = 'cover'
+}: {
+  src?: string;
+  alt: string;
+  className?: string;
+  fit?: 'cover' | 'contain';
+}) {
   const reduce = useReducedMotion();
   const [loaded, setLoaded] = useState(false);
   if (!src) return <div className={`bg-panel ${className ?? ''}`} />;
@@ -19,7 +29,7 @@ export function RevealImage({ src, alt, className }: { src?: string; alt: string
             : { opacity: loaded ? 1 : 0.2, clipPath: 'inset(0 0 0 0)', filter: loaded ? 'blur(0px)' : 'blur(8px)' }
         }
         transition={{ duration: motionTokens.durations.slow, ease: motionTokens.easing.easeOutSoft }}
-        className="h-full w-full object-cover"
+        className={`h-full w-full ${fit === 'contain' ? 'object-contain' : 'object-cover'}`}
       />
     </div>
   );

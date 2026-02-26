@@ -30,11 +30,15 @@ export function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: motionTokens.durations.slow, delay: 0.06 }}
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+                className="grid grid-cols-1 border-l border-t border-hairline sm:grid-cols-2 lg:grid-cols-4"
               >
                 {Array.from({ length: 4 }).map((_, i) => {
                   const product = products[cursor + i] ?? products[(cursor + i) % Math.max(products.length, 1)];
-                  return product ? <ProductTile key={`${blockIdx}-${rowIdx}-${i}-${product.handle}`} product={product} /> : null;
+                  return product ? (
+                    <div className="border-b border-r border-hairline" key={`${blockIdx}-${rowIdx}-${i}-${product.handle}`}>
+                      <ProductTile product={product} />
+                    </div>
+                  ) : null;
                 })}
               </motion.div>
             </div>
