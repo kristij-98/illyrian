@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --paper: #faf8f4;
+  --panel: #f6f6f6;
+  --ink: #111111;
+  --accent: #6b2b2b;
+  --hairline: rgba(0, 0, 0, 0.1);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 1.4rem;
+  letter-spacing: 0.04em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hairline {
+  border-color: var(--hairline);
+}
+
+.caption {
+  font-size: 1.05rem;
+  line-height: 1.3;
+  letter-spacing: 0.05em;
+  opacity: 0.82;
+  text-transform: uppercase;
+}
+
+.editorial-title {
+  font-size: clamp(2.4rem, 4vw, 6.6rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+.underline-hover {
+  position: relative;
+}
+
+.underline-hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  background: currentColor;
+}
+
+.underline-hover:hover::after {
+  transform: scaleX(1);
+}
